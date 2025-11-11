@@ -26,7 +26,7 @@ describe('Pact Verification', () => {
     // the consumer's mainBranch property and all the currently deployed and currently released and supported versions of each consumer.
     // https://docs.pact.io/pact_broker/advanced_topics/consumer_version_selectors
     const fetchPactsDynamicallyOpts = {
-      provider: 'pactflow-example-provider',
+      provider: 'Adrians-Provider',
       consumerVersionSelectors: [
         { mainBranch: true },
         { deployed: true },
@@ -34,7 +34,7 @@ describe('Pact Verification', () => {
       ],
       pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
       // https://docs.pact.io/pact_broker/advanced_topics/pending_pacts
-      enablePending: true,
+      enablePending: false, // Changed to false - ALL failures will block deployment
       // https://docs.pact.io/pact_broker/advanced_topics/wip_pacts
       includeWipPactsSince: '2020-01-01'
     };
